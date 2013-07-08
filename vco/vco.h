@@ -37,6 +37,10 @@ SCA_TDF_MODULE(vco) {
     out.write(gain * sin(wvco * tn));
   }
 
+  void set_attributes() {
+    out.set_delay(1);  // feedback loop!
+  }
+
   SCA_CTOR(vco) {
     debug_init = 1;
   }
